@@ -3,7 +3,7 @@ import React from 'react'
 import dynamic from 'next/dynamic'
  
 const FavoritePage = dynamic(
-  () => import('@/component/pages/favoritePage'),
+  () => import('@/components/pages/favoritePage'),
   { ssr: false }
 )
 

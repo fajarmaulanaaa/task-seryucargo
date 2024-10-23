@@ -4,7 +4,7 @@ import "./globals.css";
 import dynamic from "next/dynamic";
 
 const Header = dynamic(
-  () => import('@/component/organisms/Header'),
+  () => import('@/components/organisms/Header'),
   { ssr: false }
 )
 
