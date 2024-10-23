@@ -1,9 +1,5 @@
-import dynamic from 'next/dynamic';
+import Homepage from '../component/pages/homePage';
 import React from 'react'
-const Homepage = dynamic(
-  () => import('../component/pages/homePage'),
-  { ssr: false }
-)
 
 export default function Home() {
   return (
