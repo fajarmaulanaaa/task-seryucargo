@@ -8,10 +8,13 @@ import { RiCloseCircleLine } from "react-icons/ri";
 import GeneralButton from '../atoms/GeneralButton';
 import { useRouter } from 'next/navigation';
 import AuthButton from '../molecules/AuthButton';
+import authStore from '@/context/auth/authStore';
 
 const MenuMobile = () => {
     const router = useRouter();
     const [isOpenMenuRight, setIsOpenMenuRight] = React.useState(false);
+    const { popUpLogin, setPopUpLogin } = authStore();
+    const session = localStorage.getItem('session_id')
     const openMenuRight = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
         if (
             event &&
@@ -51,8 +54,13 @@ const MenuMobile = () => {
                                 <ListItem key={index} >
                                     <GeneralButton color={colors.white} variant='text'
                                         onClick={() => {
-                                            setIsOpenMenuRight(false)
-                                            router.push(item.path);
+                                            if (session) {
+                                                setIsOpenMenuRight(false)
+                                                router.push(item.path);
+                                            } else {
+                                                setIsOpenMenuRight(false)
+                                                setPopUpLogin(true)
+                                            }
                                         }} >
                                         {item.title}
                                     </GeneralButton>
