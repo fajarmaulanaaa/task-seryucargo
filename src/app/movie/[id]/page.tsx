@@ -6,5 +6,3 @@ export default function Page({ params }: { params: { id: number } }) {
         <MovieDetailPage params={params} />
     )
 }
-
-// export default page
