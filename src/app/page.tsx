@@ -7,10 +7,6 @@ const Homepage = dynamic(
 
 export default function Home() {
   return (
-    <React.Fragment>
-
-      <Homepage />
-      
-    </React.Fragment>
+    <Homepage />
   );
 }
