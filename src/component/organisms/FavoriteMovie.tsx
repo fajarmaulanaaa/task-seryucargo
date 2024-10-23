@@ -29,7 +29,7 @@ const FavoriteMovie = () => {
                         dataFavorite && dataFavorite.results.length !== 0 ?
                             <Grid container spacing={2}>
                                 {
-                                    dataFavorite.results.map((item, index) => (
+                                    dataFavorite.results.map((item: any, index: number) => (
                                         <Grid spacing={1} key={index} item xs={6} sm={4} md={3} lg={2} sx={{ alignItems: "center", }}>
                                             <Box>
                                                 <MovieCard

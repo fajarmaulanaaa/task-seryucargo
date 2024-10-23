@@ -23,13 +23,13 @@ const IconToogleMovie: React.FC<Proops> = ({ id }) => {
     const checkIfIdsExist = (id: number, button: 'favorite' | 'watchlist') => {
         if (button === 'favorite') {
             if (dataFavorite) {
-                return !!dataFavorite.results.find((item) => item.id === id);
+                return !!dataFavorite.results.find((item: any) => item.id === id);
             } else {
                 return false
             }
         } else {
             if (dataWatchlist) {
-                return !!dataWatchlist.results.find((item) => item.id === id);
+                return !!dataWatchlist.results.find((item: any) => item.id === id);
             } else {
                 return false
             }

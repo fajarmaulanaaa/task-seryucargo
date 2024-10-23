@@ -28,7 +28,7 @@ const NowPlaying = () => {
                         :
                         dataNowPlaying && dataNowPlaying.results.length !== 0 ?
                             <SwiperMovie
-                                dataMovie={dataNowPlaying.results.map(item => ({
+                                dataMovie={dataNowPlaying.results.map((item: any) => ({
                                     id: item.id,
                                     title: item.original_title,
                                     years: item.release_date.toString(),
