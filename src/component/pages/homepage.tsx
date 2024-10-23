@@ -1,4 +1,4 @@
-// 'use client'
+'use client'
 import React, { useEffect } from 'react'
 import ContainerPages from '../templates/ContainerPages'
 import TopRatedMovie from '../organisms/TopRatedMovie'
@@ -9,22 +9,22 @@ import watchlistStore from '@/context/watchlist/watchlistStore'
 import favoriteStore from '@/context/favorite/favoriteStore'
 
 const HomePage = () => {
-    // const searchParams = useSearchParams()
-    // const request_token = searchParams.get('request_token');
-    // const approved = searchParams.get('approved');
-    // const { handleCreateSession } = authStore();
-    // const { getDataWatchlistMovie } = watchlistStore();
-    // const { getDataFavoriteMovie } = favoriteStore();
-    // const session = localStorage.getItem('session_id')
-    // useEffect(() => {
-    //     if (!session && request_token && approved === 'true') {
-    //         handleCreateSession(request_token)
-    //     }
-    //     if (session) {
-    //         getDataFavoriteMovie(atob(session))
-    //         getDataWatchlistMovie(atob(session))
-    //     }
-    // }, [])
+    const searchParams = useSearchParams()
+    const request_token = searchParams.get('request_token');
+    const approved = searchParams.get('approved');
+    const { handleCreateSession } = authStore();
+    const { getDataWatchlistMovie } = watchlistStore();
+    const { getDataFavoriteMovie } = favoriteStore();
+    const session = localStorage.getItem('session_id')
+    useEffect(() => {
+        if (!session && request_token && approved === 'true') {
+            handleCreateSession(request_token)
+        }
+        if (session) {
+            getDataFavoriteMovie(atob(session))
+            getDataWatchlistMovie(atob(session))
+        }
+    }, [])
 
     return (
         <ContainerPages>
