@@ -1,9 +1,10 @@
+import MyHomePage from '@/component/pages/homePage'
 import React from 'react'
 
 const HomePage = () => {
-  return (
-    <div>H</div>
-  )
+    return (
+        <MyHomePage />
+    )
 }
 
 export default HomePage
