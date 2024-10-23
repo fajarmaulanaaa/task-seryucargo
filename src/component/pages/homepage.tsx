@@ -10,12 +10,12 @@ import favoriteStore from '@/context/favorite/favoriteStore'
 
 const Homepage = () => {
     const searchParams = useSearchParams()
-    const request_token = searchParams.get('request_token');
-    const approved = searchParams.get('approved');
+    const request_token = typeof window !== 'undefined' ? searchParams.get('request_token') : null
+    const approved = typeof window !== 'undefined' ? searchParams.get('approved') : null
     const { handleCreateSession } = authStore();
     const { getDataWatchlistMovie } = watchlistStore();
     const { getDataFavoriteMovie } = favoriteStore();
-    const session = localStorage.getItem('session_id')
+    const session = typeof window !== 'undefined' ? localStorage.getItem('session_id') : null
     useEffect(() => {
         if (!session && request_token && approved === 'true') {
             handleCreateSession(request_token)
