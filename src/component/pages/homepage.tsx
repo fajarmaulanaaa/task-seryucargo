@@ -8,7 +8,7 @@ import authStore from '@/context/auth/authStore'
 import watchlistStore from '@/context/watchlist/watchlistStore'
 import favoriteStore from '@/context/favorite/favoriteStore'
 
-const Homepage = () => {
+const HomePage = () => {
     const searchParams = useSearchParams()
     const request_token = searchParams.get('request_token');
     const approved = searchParams.get('approved');
@@ -39,4 +39,4 @@ const Homepage = () => {
     )
 }
 
-export default Homepage
+export default HomePage
