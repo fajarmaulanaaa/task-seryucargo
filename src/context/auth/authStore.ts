@@ -31,7 +31,7 @@ const authStore = create<RateMovieState>((set) => ({
             set({ loadingLogin: false, });
             console.log(res);
             if (res.status === 200) {
-                window.location.href = `https://www.themoviedb.org/authenticate/${res.data.request_token}?redirect_to=http://localhost:3000`
+                window.location.href = `https://www.themoviedb.org/authenticate/${res.data.request_token}?redirect_to=https://task-seryucargo.vercel.app`
             } else {
                 showMessageError(res.response.data.status_message)
             }
