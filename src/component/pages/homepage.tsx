@@ -8,7 +8,7 @@ import authStore from '@/context/auth/authStore'
 import watchlistStore from '@/context/watchlist/watchlistStore'
 import favoriteStore from '@/context/favorite/favoriteStore'
 
-const MyHomePage = () => {
+const HomePage = () => {
     const searchParams = useSearchParams()
     const request_token = searchParams.get('request_token');
     const approved = searchParams.get('approved');
@@ -30,13 +30,13 @@ const MyHomePage = () => {
         <ContainerPages>
 
             {/* now playing  */}
-            <NowPlaying />
-
+            {/* <NowPlaying /> */}
+            halo
             {/* top Rate Movie  */}
-            <TopRatedMovie />
+            {/* <TopRatedMovie /> */}
 
         </ContainerPages>
     )
 }
 
-export default MyHomePage
+export default HomePage
