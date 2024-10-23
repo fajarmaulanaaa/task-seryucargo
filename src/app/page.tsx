@@ -5,10 +5,12 @@ const Homepage = dynamic(
   { ssr: false }
 )
 
-export default function Home() {
+const page = () => {
   return (
     <React.Fragment>
       <Homepage />
     </React.Fragment>
   );
 }
+
+export default page
